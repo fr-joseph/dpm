@@ -49,67 +49,44 @@ vlc
 
 Compile a manifest file to a raw list of package names:
 
-```bash
-dpm-compile-manifest packages.md packages.txt
-```
+`dpm-compile-manifest packages.md packages.txt`
 
 Print help:
 
-```bash
-dpm-help
-```
+`dpm-help`
 
 Install a package via pacman and enable/stow it:
 
-```bash
-dpm-install htop
-```
+`dpm-install htop`
 
 Install a package via yay and enable/stow it:
 
-```bash
-dpm-install-aur neovim-remote
-```
+`dpm-install-aur neovim-remote`
 
 List installed packages, enabled and available:
 
-```bash
-dpm-ls
-```
+`dpm-ls`
 
 Process a raw package list, running a function on each line:
 
-```bash
-dpm-process-package-list packages.txt dpm-install
-dpm-process-package-list packages.txt dpm-unstow
-```
+`dpm-process-package-list packages.txt dpm-install`
 
 Enable/stow a package:
 
-```bash
-dpm-stow htop
-```
+`dpm-stow htop`
 
 Enable/stow all packages:
 
-```bash
-dpm-stow-all
-```
+`dpm-stow-all`
 
 Unstow/disable and uninstall a package:
 
-```bash
-dpm-uninstall htop
-```
+`dpm-uninstall htop`
 
 Unstow/disable a package:
 
-```bash
-dpm-unstow htop
-```
+`dpm-unstow htop`
 
 Unstow/disable all packages:
 
-```bash
-dpm-unstow-all
-```
+`dpm-unstow-all`
