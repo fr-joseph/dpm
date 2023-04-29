@@ -1,0 +1,4 @@
+#!/bin/bash
+MANIFEST="$1"
+COMMAND="$2"
+cat "$MANIFEST" | xargs -I % "$COMMAND" %

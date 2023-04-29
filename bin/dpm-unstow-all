@@ -1,0 +1,4 @@
+#!/bin/bash
+pushd "/stow" > /dev/null
+ls -1 | xargs -I % dpm-unstow %
+popd > /dev/null

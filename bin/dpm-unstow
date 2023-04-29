@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# unstow the package
+pushd "/stow" > /dev/null
+sudo stow -t "/" -D "$1"
+popd > /dev/null
+
+# remove symlink to indicate that the package is unstowed
+pushd "/stow-enabled" > /dev/null
+sudo rm -f "$1"
+popd > /dev/null

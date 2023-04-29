@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "$(tput setaf 2)enabled:$1$(tput setaf 7)"
+ls -1 /stow-enabled
+echo ""
+echo "$(tput setaf 4)available:$1$(tput setaf 7)"
+diff -q /stow /stow-enabled | sed -e 's|Only in /stow: ||'
+echo ""

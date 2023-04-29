@@ -1,0 +1,98 @@
+#!/bin/bash
+
+less << EOF
+
+Dynamic Package Manager (DPM)
+
+  dpm is a package management tool for Arch Linux, wrapping GNU stow, pacman and yay.
+
+  it's functionality is split into many small "dpm-" binaries
+
+OVERVIEW
+
+  all packages are installed to "/stow" rather than "/"
+
+  they can be dynamically enabled/disabled by stowing/unstowing them to "/"
+
+MANIFEST FILES
+
+  you can stow/unstow/install/uninstall apps from manifest files
+
+  these are markdown files, where lines starting with #
+  are treated as a comment, and every other line is
+  treated as the name of a package
+
+  this allows you to group apps under markdown headings
+  the process will strip out the headings for you when
+  manipulating the manifest file
+
+  example packages.md file:
+
+    # my packages
+
+    ## media
+    sxiv
+    vlc
+
+    ## web
+    firefox
+    qutebrowser
+
+  will be compiled to:
+
+    firefox
+    qutebrowser
+    sxiv
+    vlc
+
+USAGE EXAMPLES
+
+  dpm-compile-manifest
+
+  :       dpm-compile-manifest packages.md packages.txt
+
+  dpm-help
+
+  :       dpm-help
+
+  dpm-install
+
+  :       dpm-install htop
+
+  dpm-install-aur
+
+  :       dpm-install-aur neovim-remote
+
+  dpm-ls
+
+  :       dpm-ls
+
+  dpm-process-package-list
+
+  :       dpm-process-package-list packages.txt dpm-install
+
+  :       dpm-process-package-list packages.txt dpm-unstow
+
+  dpm-stow
+
+  :       dpm-stow htop
+
+  dpm-stow-all
+
+  :       dpm-stow-all
+
+  dpm-uninstall
+
+  :       dpm-uninstall htop
+
+  dpm-unstow
+
+  :       dpm-unstow htop
+
+  dpm-unstow-all
+
+  :       dpm-unstow-all
+
+EOF
+
+

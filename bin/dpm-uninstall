@@ -1,0 +1,11 @@
+#!/bin/bash
+
+dpm-unstow "$1"
+
+FLAGS="--noconfirm"
+DB="-b /var/lib/pacman"
+ROOT="-r /stow/$1"
+ACTION="-Rsc"
+eval "sudo pacman $FLAGS $DB $ROOT $ACTION $1"
+
+sudo rm -rf "/stow/$1"

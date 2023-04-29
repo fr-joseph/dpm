@@ -1,0 +1,9 @@
+#!/bin/bash
+sudo mkdir -p "/stow/$1"
+FLAGS="--noconfirm --needed"
+DB="-b /var/lib/pacman"
+ROOT="-r /stow/$1"
+ACTION="-Sy"
+eval "yay $FLAGS $DB $ROOT $ACTION $1"
+
+dpm-stow "$1"
