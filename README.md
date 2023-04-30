@@ -47,6 +47,10 @@ vlc
 
 ## USAGE EXAMPLES
 
+Archive a package:
+
+`dpm-archive`
+
 Compile a manifest file to a raw list of package names:
 
 `dpm-compile-manifest packages.md packages.txt`

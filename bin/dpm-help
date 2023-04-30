@@ -47,6 +47,10 @@ MANIFEST FILES
 
 USAGE EXAMPLES
 
+  dpm-archive
+
+  :       dpm-archive htop
+
   dpm-compile-manifest
 
   :       dpm-compile-manifest packages.md packages.txt

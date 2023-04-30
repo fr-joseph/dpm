@@ -1,16 +1,20 @@
 #!/bin/bash
 
-# stow the package
-pushd "/stow" > /dev/null
-sudo stow -t "/" "$1"
-popd > /dev/null
-
 # mkdir unless exists
 if ! [[ -d "/stow-enabled" ]]; then
   sudo mkdir -p "/stow-enabled"
 fi
 
-# symlink to indicate that the package is stowed
-pushd "/stow-enabled" > /dev/null
-sudo ln -sf "/stow/$1" "$1"
-popd > /dev/null
+# stow the package, unless already stowed
+if ! [[ -e "/stow-enabled/$1" ]]; then
+  # stow
+  pushd "/stow" > /dev/null
+  sudo stow -t "/" "$1"
+  popd > /dev/null
+
+  # symlink to indicate that the package is stowed
+  pushd "/stow-enabled" > /dev/null
+  sudo ln -sf "/stow/$1" "$1"
+  popd > /dev/null
+fi
+

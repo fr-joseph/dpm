@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# mkdir unless exists
+if ! [[ -d "/stow-archive" ]]; then
+  sudo mkdir -p "/stow-archive"
+fi
+
+# archive the package if exists
+if [[ -e "/stow/$1" ]]; then
+
+  # remove old archive if exists
+  if [[ -e "/stow-archive/$1" ]]; then
+    sudo rm -rf "/stow-archive/$1"
+  fi
+
+  # archive
+  sudo cp -r "/stow/$1" "/stow-archive/$1"
+fi
+
